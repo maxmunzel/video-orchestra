@@ -29,15 +29,7 @@ def next():
 def next():
     print("reset")
     emit("reset", broadcast=True)
-# code samples from http://blog.miguelgrinberg.com/post/easy-websockets-with-flask-and-gevent
 
-@socketio.on('my event')
-def test_message(message):
-    emit('my response', {'data': message['data']})
-
-@socketio.on('error')
-def test_message(message):
-    emit('my response', {'data': message['ata']}, broadcast=True)
 
 @socketio.on('connect')
 def test_connect():

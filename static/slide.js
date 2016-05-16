@@ -8,7 +8,8 @@ function video(src){
 	$("#theatre").prepend($("<video>"));
 	$("video").attr("width","100%");
 	$("video").attr("src", "media/"+src);
-	$("video").get(0).play();
+	$("video").attr("type", "video/"+src.split(".").pop());
+	$("video").attr("autoplay", "autoplay");
 
 
 }
@@ -41,12 +42,7 @@ function action(slide){
 
 
 }
-var slide = -1;
-$(document).ready(function(){
-	$("body").keypress(function() {
-		next();
-	});
-});
+
 
 function next(){
 	slide++;
