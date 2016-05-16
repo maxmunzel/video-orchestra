@@ -5,9 +5,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'tzJV+JEqggs8OO4+CcXfQPeDlE5AD2R9oHO4XT+qdsuK7FOGK'
 socketio = SocketIO(app)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/<script>')
+def index(script="config"):
+    print(script)
+    return render_template('index.html', script=script)
 
 
 @app.route("/media/<filename>")
